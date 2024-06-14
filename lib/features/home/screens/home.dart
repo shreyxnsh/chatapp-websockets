@@ -1,3 +1,4 @@
+import 'package:chatsy/features/chats/screens/chat.dart';
 import 'package:chatsy/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen>with SingleTickerProviderStateMi
   void initState() {
     // TODO: implement initState
     super.initState();
-    _tabController = TabController(length: 4, vsync: this, initialIndex: 0);
+    _tabController = TabController(length: 4, vsync: this, initialIndex: 1);
   }
 
   @override
@@ -58,8 +59,13 @@ class _HomeScreenState extends State<HomeScreen>with SingleTickerProviderStateMi
         ]),
       ],
       bottom: TabBar(
-          
+          unselectedLabelStyle: Theme.of(context).textTheme.bodyText1,
+          labelStyle: Theme.of(context).textTheme.bodyText1!.copyWith(fontWeight: FontWeight.bold , color: FColors.white),
           controller: _tabController,
+          labelColor: FColors.white,
+          indicatorColor: FColors.white,
+          
+          
           tabs: [
             Tab(icon: Icon(Icons.camera_alt)),
             Tab(text: 'Chats'),
@@ -74,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen>with SingleTickerProviderStateMi
      
       body: TabBarView(children: [
             Center(child: Text('Camera')),
-            Center(child: Text('Chats')),
+            ChatScreen(),
             Center(child: Text('Status')),
             Center(child: Text('Calls')),
           ], controller: _tabController),
