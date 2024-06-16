@@ -1,6 +1,8 @@
 import 'package:chatsy/features/chats/models/chat_model.dart';
+import 'package:chatsy/features/chats/screens/selectcontact.dart';
 import 'package:chatsy/features/chats/screens/widgets/chat_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -18,28 +20,28 @@ class _ChatScreenState extends State<ChatScreen> {
       icon: 'assets/images/person.jpg',
       isGroup: false,
       time: '12:00',
-      message: 'Call me when you are free!',
+      currentMessage: 'Call me when you are free!',
     ),
     ChatModel(
       name: 'Jane Doe',
       icon: 'assets/images/person.jpg',
       isGroup: true,
       time: '12:00',
-      message: 'Hello there!',
+      currentMessage: 'Hello there!',
     ),
     ChatModel(
       name: 'Anand',
       icon: 'assets/images/person.jpg',
       isGroup: true,
       time: '12:00',
-      message: 'Hello',
+      currentMessage: 'Hello',
     ),
     ChatModel(
       name: 'Vansh',
       icon: 'assets/images/group.jpg',
       isGroup: true,
       time: '12:00',
-      message: 'Hello there!',
+      currentMessage: 'Hello there!',
     ),
 
   ];
@@ -55,6 +57,7 @@ class _ChatScreenState extends State<ChatScreen> {
         backgroundColor: Colors.green,
         onPressed: () {
           // Navigate to the new chat screen
+          Get.to(() => SelectContactScreen());
         },
         child: const Icon(Icons.message),
       ),
