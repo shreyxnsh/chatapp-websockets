@@ -31,7 +31,7 @@ class ChatTile extends StatelessWidget {
               children: [
                 Icon(Icons.done_all , size: 20,),
                 const SizedBox(width: 5),
-                SizedBox(width: FSizes.displayWidth(context) * 0.5 , child: Text(chatModel.message, maxLines: 1, overflow: TextOverflow.ellipsis,)),
+                SizedBox(width: FSizes.displayWidth(context) * 0.5 , child: Text(chatModel.currentMessage, maxLines: 1, overflow: TextOverflow.ellipsis,)),
               ],
             ),
           
