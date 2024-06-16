@@ -14,7 +14,7 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       title: FTexts.appName,
       themeMode: ThemeMode.system,
-      theme: FAppTheme.lightTheme,
+      theme: FAppTheme.darkTheme,
       darkTheme: FAppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
       home: const HomeScreen(),

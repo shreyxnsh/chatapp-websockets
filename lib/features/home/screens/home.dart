@@ -1,3 +1,4 @@
+import 'package:chatsy/features/camera/screens/camera.dart';
 import 'package:chatsy/features/chats/screens/chat.dart';
 import 'package:chatsy/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
@@ -79,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen>with SingleTickerProviderStateMi
       
      
       body: TabBarView(children: [
-            Center(child: Text('Camera')),
+            CameraScreen(),
             ChatScreen(),
             Center(child: Text('Status')),
             Center(child: Text('Calls')),
