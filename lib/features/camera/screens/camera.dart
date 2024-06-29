@@ -27,7 +27,7 @@ class _CameraScreenState extends State<CameraScreen> {
   @override
   void initState() {
     super.initState();
-    _cameraController = CameraController(cameras[0], ResolutionPreset.high);
+    // _cameraController = CameraController(cameras[0], ResolutionPreset.high);
     cameraValue = _cameraController.initialize();
   }
 
@@ -128,14 +128,14 @@ class _CameraScreenState extends State<CameraScreen> {
                             ),
                           ),
                           onPressed: () async {
-                            setState(() {
-                              iscamerafront = !iscamerafront;
-                              transform = transform + pi;
-                            });
-                            int cameraPos = iscamerafront ? 0 : 1;
-                            _cameraController = CameraController(
-                                cameras[cameraPos], ResolutionPreset.high);
-                            cameraValue = _cameraController.initialize();
+                            // setState(() {
+                            //   iscamerafront = !iscamerafront;
+                            //   transform = transform + pi;
+                            // });
+                            // int cameraPos = iscamerafront ? 0 : 1;
+                            // _cameraController = CameraController(
+                            //     cameras[cameraPos], ResolutionPreset.high);
+                            // cameraValue = _cameraController.initialize();
                           }),
                     ],
                   ),
