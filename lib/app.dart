@@ -1,3 +1,4 @@
+import 'package:chatsy/features/authentication/screens/LoginScreen.dart';
 import 'package:chatsy/features/home/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,7 +18,7 @@ class App extends StatelessWidget {
       theme: FAppTheme.darkTheme,
       darkTheme: FAppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home:  LoginScreen(),
     );
   }
 }
