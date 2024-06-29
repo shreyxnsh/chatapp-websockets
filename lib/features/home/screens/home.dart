@@ -1,10 +1,14 @@
 import 'package:chatsy/features/camera/screens/camera.dart';
+import 'package:chatsy/features/chats/models/chat_model.dart';
 import 'package:chatsy/features/chats/screens/chat.dart';
 import 'package:chatsy/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, required this.chatmodels, required this.sourchat});
+
+    final List<ChatModel> chatmodels;
+  final ChatModel sourchat;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -81,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen>with SingleTickerProviderStateMi
      
       body: TabBarView(children: [
             CameraScreen(),
-            ChatScreen(),
+            ChatScreen(chatmodels: widget.chatmodels,),
             Center(child: Text('Status')),
             Center(child: Text('Calls')),
           ], controller: _tabController),

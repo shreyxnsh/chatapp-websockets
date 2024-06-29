@@ -6,7 +6,8 @@ import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({super.key});
+  const ChatScreen({super.key, required this.chatmodels});
+  final List<ChatModel> chatmodels;
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -14,37 +15,6 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
 
-  List<ChatModel> chats = [
-    ChatModel(
-      name: 'Jyotsna',
-      icon: 'assets/images/person.jpg',
-      isGroup: false,
-      time: '12:00',
-      currentMessage: 'Call me when you are free!',
-    ),
-    ChatModel(
-      name: 'Jane Doe',
-      icon: 'assets/images/person.jpg',
-      isGroup: true,
-      time: '12:00',
-      currentMessage: 'Hello there!',
-    ),
-    ChatModel(
-      name: 'Anand',
-      icon: 'assets/images/person.jpg',
-      isGroup: true,
-      time: '12:00',
-      currentMessage: 'Hello',
-    ),
-    ChatModel(
-      name: 'Vansh',
-      icon: 'assets/images/group.jpg',
-      isGroup: true,
-      time: '12:00',
-      currentMessage: 'Hello there!',
-    ),
-
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +32,9 @@ class _ChatScreenState extends State<ChatScreen> {
         child: const Icon(Icons.message),
       ),
 
-      body: ListView.builder(itemCount: chats.length , itemBuilder: (context, index) {
+      body: ListView.builder(itemCount: widget.chatmodels.length , itemBuilder: (context, index) {
         return ChatTile(
-          chatModel: chats[index],
+          chatModel: widget.chatmodels[index],
         );
       }),
     );
